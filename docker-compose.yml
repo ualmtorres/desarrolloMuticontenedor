@@ -1,0 +1,18 @@
+version: '2'
+services:
+  selectividad-api:
+    container_name: selectividad-api
+    restart: always
+    image: ualmtorres/phalcon-apache-ubuntu
+    ports:
+      - "80:80"
+    volumes:
+      - ./api/app:/var/www/html
+  selectividad-front:
+    container_name: selectividad-front
+    restart: always
+    image: php:7.2-apache
+    ports:
+      - "8088:80"
+    volumes:
+      - ./front/app:/var/www/html

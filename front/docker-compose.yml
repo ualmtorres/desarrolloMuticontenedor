@@ -1,0 +1,16 @@
+version: '2'
+services:
+  selectividad-api:
+    container_name: selectividad-api
+    restart: always
+    image: ualmtorres/selectividad-api:v3
+    ports:
+      - "80:80"
+  selectividad-front:
+    container_name: selectividad-front
+    restart: always
+    image: php:7.2-apache
+    ports:
+      - "8088:80"
+    volumes:
+      - ./app:/var/www/html
